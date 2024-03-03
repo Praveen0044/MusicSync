@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>AdminAddSong</title>
+</head>
+<body>
+<section>
+<form style="height:220px;width:200px;" action="/addsongs" method="post">
+<h1>Add Songs</h1>
+<label for="">Song name:</label>
+<input type="text" name="name" placeholder="Enter  name" required="required"/>
+<br/>
+<br/>
+<label for="">Song artist:</label>
+<input type="text" name="artist" placeholder="Enter artist name" required="required"/>
+<br/>
+<br/>
+<label for="">Song genre:</label>
+<input type="text" name="genre" placeholder="Enter Song genre" required="required"/>
+<br/>
+<br/>
+<label for="">Song Link:</label>
+<input type="text" name="link" placeholder="Enter song link" required="required"/>
+<br/>
+<br/>
+<button>ADD SONGS</button>
+</form>
+</section>
+</body>
+</html>

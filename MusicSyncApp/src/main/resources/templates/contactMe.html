@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="contactbase::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Me</title>
+	<link rel="stylesheet" th:href="@{/css/contact.css}" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<section>
+		<div class="cards">
+			<div class="contact">Contact Me</div>
+			<div class="contact-form" style="background-color: antiquewhite;">
+				<a href="#" class="close"><i class="fa fa-times"></i></a>
+				<form action="/submitForm" method="post" style="background-color: aquamarine;">
+					<div class="control"><input type="text" id="name"><label style="color:black;" for="name">Your Name</label></div>
+					<div class="control"><input type="text" id="email"><label style="color:black" for="email">Email</label></div>
+					<div class="control"><textarea name="" id="message"></textarea><label style="color:black"
+							for="message">Message</label></div>
+					<div class="control submit"><input type="submit"></div>
+				</form>
+			</div>
+			<div class="card active" id="overview">
+				<a class="card-toggle"><i class="fa fa-arrow-circle-left"></i></a>
+				<div class="card-content">
+					<div class="row">
+						<div class="left col">
+							<h2>Personal <strong>Social Card</strong></h2>
+
+							<p>Click one of the social icons below to switch between card or click Contact Me link to
+								show the contact form card. <br /></p>
+
+						</div>
+						<div class="right col">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card" id="linkedin">
+				<a class="card-toggle"><i><span class="fa fa-linkedin"></span></i></a>
+				<div class="card-content">
+
+
+					<div class="row">
+						<div class="left col">
+							<a href="https://www.linkedin.com/in/praveen-kumar-singh-300942243/"
+								style="text-decoration:none;" target="_blank"><h2><strong>My LinkedIn</strong></h2></a>
+
+							<p>Click On above <em>My LinkedIn<em/> to connect with me on LinkedIn</p>
+						</div>
+						<div class="right col"><img
+								src="https://dl.dropboxusercontent.com/u/26808427/cdn/preview.jpg" alt="" /></div>
+					</div>
+				</div>
+			</div>
+			<div class="card" id="github">
+				<a class="card-toggle"><i><span class="fa fa-github"></span></i></a>
+				<div class="card-content">
+					<div class="row">
+						<div class="left col">
+							<a href="https://github.com/Praveen0044" style="text-decoration:none;" target="_blank"><h2><strong>My
+										Github</strong></h2></a>
+
+							<p>Explore my projects By clicking on <em>My GitHub<em/>.</p>
+						</div>
+						<div class="right col"><img
+								src="https://dl.dropboxusercontent.com/u/26808427/cdn/preview.jpg" alt="" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+    document.querySelector(".card-toggle").addEventListener("click", function () {
+        // Card toggle state
+        document.querySelector(".card-toggle.active").classList.remove("active");
+        this.classList.add("active");
+
+        var isAnimating = false;
+
+        if (!isAnimating) {
+            isAnimating = true;
+
+            document.querySelector(".card.active").querySelector(".card-content").style.zIndex = 0;
+            document.querySelector(".card.active").classList.remove("active");
+
+            var that = this;
+
+            document.querySelector(this).parentNode.classList.add("active");
+
+            setTimeout(function () {
+                document.querySelector(that).parentNode.querySelector(".card-content").addEventListener('transitionend', function () {
+                    isAnimating = false;
+                });
+            }, 10);
+        } else {
+            return;
+        }
+    });
+
+
+    document.querySelector("input,textarea").blur(function () {
+    	if (document.querySelector(this).val()) {
+    		document.querySelector(this).parent().addClass("filled");
+    	} else {
+    		document.querySelector(this).parent().removeClass("filled");
+    	}
+    });
+
+    document.querySelector(".contact").on("click", function () {
+    	document.querySelector(".contact-form").toggleClass("active");
+    });
+    document.querySelector(".contact-form input[type=submit], .contact-form .close").on(
+    	"click",
+    	function (e) {
+    		e.preventDefault();
+    		document.querySelector(".contact-form").toggleClass("active");
+    	}
+    );
+
+</script>
+	</section>
+</body>
+
+</html>

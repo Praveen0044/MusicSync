@@ -1,0 +1,33 @@
+@charset "UTF-8";
+a{
+	
+	text-decoration: none;
+}
+a:visited{
+	color:white;
+}
+a:hover{
+	background-color:gray;
+	color:white;
+}
+nav a{
+	margin:1.2rem;
+}
+
+h1{
+	text-align:center;
+	color:white;
+}
+div{
+    height: 100px;
+    width: 180px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 70px rgba(8,7,16,0.6);
+    padding: 40px 95px 320px 75px;
+}

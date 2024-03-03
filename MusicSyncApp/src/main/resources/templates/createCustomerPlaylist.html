@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>CreateCustomerPlaylist</title>
+</head>
+<body>
+<section>
+<form action="/addCustomerPlaylist" method="post">
+<label for="name">Playlist Name:</label>
+<input type="text" name="name" placeholder="enter playlist name"/>
+<br/>
+<br/>
+<div th:each="song:${songlist}">
+
+<input type="checkbox"  th:name="song" th:value="${song.id}">
+<label  th:text="${song.name}"></label>
+
+<br/>
+<br/>
+</div>
+<button>ADD PLAYLIST</button>
+</form>
+</section>
+</body>
+</html>

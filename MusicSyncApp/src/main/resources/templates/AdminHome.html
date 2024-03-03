@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>AdminHome</title>
+</head>
+<body>
+<section>
+<h1>Admin home</h1>
+<br>
+<br>
+<button>
+<a href="/map-add">ADD SONGS</a>
+</button>
+<button>
+<a href="/map-viewsong">VIEW SONGS</a>
+</button>
+<button>
+<a href="/map-createplaylist">CREATE PLAYLIST</a>
+</button>
+<button>
+<a href="/map-viewplaylist">VIEW PLAYLIST</a>
+</button>
+</section>
+</body>
+</html>

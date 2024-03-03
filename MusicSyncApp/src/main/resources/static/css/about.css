@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card-slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 15px;
+            background-color:beige;
+        }
+  

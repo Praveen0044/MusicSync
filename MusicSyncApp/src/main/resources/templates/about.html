@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="home::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script th:src="@{/js/script.js}"></script>
+<title>About</title>
+
+</head>
+<body>
+	<section>
+		<div class="container">
+			<h1>About MusicSync</h1>
+			<p style="color:white;margin:20px;">Welcome to MusicSync, your personalized music companion.
+				Explore the unique features that set us apart and enhance your
+				musical journey.</p>
+
+		<div class="card" style="display:flex;">
+				<div class="card" style="
+    padding: 30px;
+    background-color: beige;
+    border-radius: 25px;
+">
+					<img src="singer.jpg" alt="Feature - Music Discovery" style="padding-left: 34px;width: 150px;height: 150px;">
+					<div class="card-content">
+						<h3>Discover New Music</h3>
+						<p>Uncover a world of musical possibilities. Our advanced
+							recommendation engine ensures you never miss a beat. Discover new
+							tracks tailored to your taste.</p>
+					</div>
+				</div>
+
+				<div class="card"
+					style="padding: 30px; background-color: beige; border-radius: 25px;">
+					<img src="hp.jpg" alt="Feature - Music Discovery" style="padding-left: 34px;width: 150px;height: 150px;">
+					<div class="card-content">
+						<h3>Personalized Playlists</h3>
+						<p>Create and enjoy playlists curated just for you. MusicSync
+							adapts to your preferences, providing playlists that match your
+							mood, activity, and favorite genres.</p>
+					</div>
+				</div>
+
+				<div class="card" style="
+    padding: 30px;
+    background-color: beige;
+    border-radius: 25px;
+">
+					<img src="adfree.jpg" alt="Feature - Music Discovery" style="padding-left: 34px;width: 150px;height: 150px;">
+					<div class="card-content">
+						<h3>Ad-Free Listening</h3>
+						<p>Enjoy uninterrupted music without ads. MusicSync offers an
+							ad-free listening experience, allowing you to immerse yourself in
+							your favorite tracks without any interruptions.</p>
+					</div>
+				</div>
+
+				<div class="card" style="
+    padding: 30px;
+    background-color: beige;
+    border-radius: 25px;
+">
+					<img src="mm.jpg" alt="Feature - Music Discovery" style="padding-left: 34px;width: 150px;height: 150px;">
+					<div class="card-content">
+						<h3>Offline Listening</h3>
+						<p>Take your music wherever you go. With MusicSync, you can
+							download your favorite songs and playlists for offline listening,
+							ensuring uninterrupted enjoyment.</p>
+					</div>
+				</div>
+				<!-- Add more cards as needed -->
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+</html>

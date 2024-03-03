@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>CustomerHome</title>
+
+</head>
+<body>
+<section>
+<h1>Customer home</h1>
+<h1>Welcome  <span th:text="${username}"></span></h1>
+<div class="container">
+<button>
+<a href="/exploreSongs">EXPLORE SONGS</a>
+</button>
+</div>
+</section>
+
+</body>
+</html>

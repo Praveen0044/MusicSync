@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View My Playlist</title>
+    <style>
+        .playlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .playlist-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .song-list {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .song-list li {
+            margin-bottom: 5px;
+            
+        }
+        label{
+        color:#fff;
+        list-style:none;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="playlist-container">
+            <div th:each="playlist : ${plist}" class="playlist-card">
+                <button onclick="toggleSongs('playlist-' + ${playlist.id})" th:text="${playlist.name}">Show Songs</button>
+                <ul class="song-list" id="playlist-${playlist.id}" th:each="song : ${playlist.song}">
+                    <li>
+                        <label class="song-label" th:text="${song.name}"></label>
+                        <audio controls>
+                            <source th:src="${song.link}" type="audio/mpeg" />
+                        </audio>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            function toggleSongs(playlistId) {
+                var songList = document.getElementById(playlistId);
+                if (songList.style.display === 'none' || songList.style.display === '') {
+                    songList.style.display = 'block';
+                } else {
+                    songList.style.display = 'none';
+                }
+            }
+        </script>
+    </section>
+</body>
+
+</html>

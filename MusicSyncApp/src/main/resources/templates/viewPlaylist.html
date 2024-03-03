@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Admin|ViewPlaylist</title>
+</head>
+<body>
+<section>
+<table border="1">
+<thead>
+		<tr class="heading">		
+			<td>Playlist ID</td>
+			<td>Playlist Name</td>
+			<td>Playlist Songs</td>
+		</tr>
+</thead>
+<tbody>
+		<tr class="part" th:each="plist : ${plist}">			
+			<td th:text="${plist.id}"></td>
+			<td th:text="${plist.name}"></td>
+			 <td>
+			 <ul th:each="song : ${plist.song}">
+			 <label th:text="${song.name}"></label>
+			 <audio  controls>
+			 <source th:src="${song.link}" type= "audio/mpeg" />
+			 </audio>
+			 </ul>
+			 </td>			
+		</tr>
+</tbody>
+	</table>
+</section>
+</body>
+</html>

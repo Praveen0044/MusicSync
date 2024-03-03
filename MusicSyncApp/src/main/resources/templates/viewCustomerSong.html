@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer View Songs</title>
+    <!-- Add your CSS links and styles here -->
+    
+</head>
+
+<body>
+    <section>
+        <h1>Viewing songs for <span th:text="${username}"></span></h1>
+
+        <!-- Search bar with a search button -->
+        <div>
+            <input type="text" id="searchInput" placeholder="Search songs...">
+            <button class="btn" onclick="searchSongs()">Search</button>
+        </div>
+
+        <div class="song-cards-container">
+            <!-- Thymeleaf iteration for song cards -->
+            <div class="song-card" th:each="song : ${songs}">
+               
+                <h3 th:text="${song.name}"></h3>
+                <p th:text="${song.artist}"></p>
+                <p th:text="${song.genre}"></p>
+                <audio controls th:src="${song.link}" type="audio/mpeg"></audio>
+                <!-- Add more details or buttons as needed -->
+            </div>
+        </div>
+
+        <script>
+            // JavaScript for dynamic search
+            function searchSongs() {
+                var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                var songCards = document.querySelectorAll('.song-card');
+
+                songCards.forEach(function (card) {
+                    var songName = card.querySelector('h3').textContent.toLowerCase();
+                    var artistName = card.querySelector('p:nth-child(2)').textContent.toLowerCase();
+                    var genre = card.querySelector('p:nth-child(3)').textContent.toLowerCase();
+
+                    if (songName.includes(searchTerm) || artistName.includes(searchTerm) || genre.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="home::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<link rel="stylesheet" th:href="@{/css/registerStyle.css}"/>
+</head>
+<body>
+
+<nav th:replace="home :: layout(content)"></nav>
+<section>
+  <form action="/register" method="post" >
+<h3>Email Id is already exists!</h3>
+<h3>Please register again</h3>
+<br/>
+<br/>
+<label for="">Username:</label>
+<input type="text" name="username" placeholder="Enter your name" required="required"/>
+<br/>
+<br/>
+<label for="">Email Id:</label>
+<input type="email" name="email" placeholder="Enter your email" required="required"/>
+<br/>
+<br/>
+<label for="">Password:</label>
+<input type="password" name="password" placeholder="Enter your password" required="required"/>
+<br/>
+<br/>
+<label for="">Gender:</label>
+Male<input type="radio" name="gender" value="male"/>
+Female<input type="radio" name="gender" value="female"/>
+Other<input type="radio" name="gender" value="other"/>
+<br/>
+<br/>
+<label for="">Role:</label>
+Admin<input type="radio" name="role" value="admin"/>
+Customer<input type="radio" name="role" value="customer"/>
+<br/>
+<br/>
+<label for="">Address:</label>
+<textarea name="address"></textarea>
+<br/>
+<br/>
+<button>REGISTER</button>
+</form>
+</section>
+</body>
+</html>

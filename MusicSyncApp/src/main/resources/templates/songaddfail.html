@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="NavBar::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>SongAlreadyExisted</title>
+</head>
+<body>
+<section>
+<h1>Song is already existed please try again</h1>
+<h1>Add Songs</h1>
+<form  action="/addsongs" method="post">
+<label for="">Song name:</label>
+<input type="text" name="name" placeholder="Enter  name" required="required"/>
+<br/>
+<br/>
+<label for="">Song artist:</label>
+<input type="text" name="artist" placeholder="Enter artist name" required="required"/>
+<br/>
+<br/>
+<label for="">Song genre:</label>
+<input type="text" name="genre" placeholder="Enter Song genre" required="required"/>
+<br/>
+<br/>
+<label for="">Song Link:</label>
+<input type="text" name="link" placeholder="Enter song link" required="required"/>
+<br/>
+<br/>
+<button>ADD SONGS</button>
+</form>
+</section>
+</body>
+</html>
