@@ -69,7 +69,7 @@ public class UsersController {
 		if(userStatus == true) {
 			return "PremiumUser";
 		}else {
-			return "makePayment";
+			return "samplePayment";
 		}
 	}
 	
