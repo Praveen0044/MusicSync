@@ -103,8 +103,6 @@ h2{
 	margin-bottom:2rem;
 }
 
-/* SAMPLE PAYMENT */
-
 
 </style>
 </head>
@@ -137,7 +135,6 @@ h2{
 							</div>
 					   </div> 
 					</li>
- 
                      		
                 </ul>
             </div>
@@ -165,23 +162,6 @@ window.onclick = function(e) {
 }
 
 
-// JavaScript for dynamic search
-function searchSongs() {
-    var searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    var songCards = document.querySelectorAll('.song-card');
-
-    songCards.forEach(function (card) {
-        var songName = card.querySelector('h3').textContent.toLowerCase();
-        var artistName = card.querySelector('p:nth-child(2)').textContent.toLowerCase();
-        var genre = card.querySelector('p:nth-child(3)').textContent.toLowerCase();
-
-        if (songName.includes(searchTerm) || artistName.includes(searchTerm) || genre.includes(searchTerm)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
 document.querySelectorAll('.card-toggle').forEach(function (toggle) {
     toggle.addEventListener('click', function () {
         // Card toggle state
